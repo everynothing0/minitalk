@@ -6,7 +6,7 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:37:50 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/07/13 16:38:24 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:41:37 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,24 @@ void	ft_handler(int sig)
 	}
 	else
 		c <<= 1;
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
+	{
+		write(1 , &"-", 1);
+		nb *= -1;
+	}
+	if (nb < 10)
+	{
+		nb += 48;
+		write(1, &nb, 1);
+		return ;
+	}
+	else
+		ft_putnbr(nb / 10);
+	ft_putnbr(nb % 10);
 }
 
 static void	ft_display(pid_t pid)
