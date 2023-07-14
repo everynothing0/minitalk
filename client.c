@@ -6,11 +6,11 @@
 /*   By: cde-voog <cde-voog@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:38:41 by cde-voog          #+#    #+#             */
-/*   Updated: 2023/07/13 17:38:00 by cde-voog         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:57:02 by cde-voog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include "minitalk.h"
+#include "minitalk.h"
 
 static void	ft_talker(pid_t pid, char c)
 {
