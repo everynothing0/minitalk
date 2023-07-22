@@ -12,11 +12,13 @@
 
 NAME = program.a
 
-COMPILE = gcc
+CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS = utils.c client.c server.c
+SRCS = utils.c \
+	client.c \
+	server.c
 
 OUTPUT = -o
 
@@ -28,13 +30,12 @@ CLEANCMD = rm -rf *.o
 FCLEANCMD = rm -rf *.a
 
 $(NAME):$(OBJ)
-	$(COMPILE) $(CFLAG) -c $(SRC)
-	ar rcs program.a ft_*.o
+	ar rcs $@ $^
 
 all:$(NAME)
 
 %.o:%.c
-	$(COMPILE) $(CFLAG) -c $< -o $@
+	$(CC) $(CFLAG) -c $< -o $@
 
 clean:
 	$(CLEANCMD)
